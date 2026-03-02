@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        label{ font-weight: bold; }
+        input{ width: 300px; padding: 10px; margin-bottom: 15px; }
+        button{ padding: 10px 20px; background-color: rgb(99, 162, 250); color: white; border: none; cursor: pointer; }
+    </style>
+    <title>Payment</title>
+</head>
+<body>
+
+<h2>Dummy Payment Page</h2>
+
+<p><strong>Book:</strong> {{ book.title }}</p>
+<p><strong>Price:</strong> ₹{{ book.price }}</p>
+
+<hr>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Card Number</label><br>
+    <input type="text" placeholder="1234 5678 9012 3456"><br><br>
+
+    <label>Expiry Date</label><br>
+    <input type="text" placeholder="MM/YY"><br><br>
+
+    <label>CVV</label><br>
+    <input type="password" placeholder="***"><br><br>
+
+    <button type="submit">Pay Now</button>
+</form>
+
+<p style="color:gray;">
+    * This is a dummy payment page. No real transaction will occur.
+</p>
+
+</body>
+</html>
